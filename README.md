@@ -220,14 +220,14 @@ git push origin main
 
 ## ✅ Checklist ก่อนส่ง
 
-- [ ] Fork และ Clone repo แล้ว
-- [ ] Import โปรเจกต์ใน Eclipse หรือ VS Code แล้ว
-- [ ] ลบไฟล์ Section อื่นออกแล้ว
-- [ ] แก้ TODO ครบทุกจุดใน Eclipse
-- [ ] รันใน Eclipse หรือ VS Code — ผลลัพธ์ตรงกับ ExpectedOutput
-- [ ] รัน `mvn test` ใน CMD — ขึ้น `BUILD SUCCESS`
-- [ ] `Failures: 0, Errors: 0`
-- [ ] แนบรูป `screenshots/mvn_test_result.png` แล้ว
-- [ ] แนบรูป `screenshots/program_output.png` แล้ว
-- [ ] `git push` ขึ้น GitHub แล้ว
-- [ ] ส่ง link repo ให้อาจารย์แล้ว
+- [✅ ] Fork และ Clone repo แล้ว
+- [✅ ] Import โปรเจกต์ใน Eclipse หรือ VS Code แล้ว
+- [✅] ลบไฟล์ Section อื่นออกแล้ว
+- [✅] แก้ TODO ครบทุกจุดใน Eclipse
+- [✅] รันใน Eclipse หรือ VS Code — ผลลัพธ์ตรงกับ ExpectedOutput
+- [✅] รัน `mvn test` ใน CMD — ขึ้น `BUILD SUCCESS`
+- [✅ ] `Failures: 0, Errors: 0`
+- [✅ ] แนบรูป `screenshots/mvn_test_result.png` แล้ว
+- [✅ ] แนบรูป `screenshots/program_output.png` แล้ว
+- [✅ ] `git push` ขึ้น GitHub แล้ว
+- [✅ ] ส่ง link repo ให้อาจารย์แล้ว
