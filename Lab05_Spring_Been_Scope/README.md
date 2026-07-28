@@ -155,4 +155,69 @@ DELETE /coffees/3   → 200 OK (หรือ 204 No Content)
 
 ---
 
+## 9. วิธีรันโปรเจกต์นี้
+
+### 9.1 ความต้องการก่อนรัน
+- Java 17 ขึ้นไป
+- Maven
+
+### 9.2 คำสั่งรัน
+```bash
+mvn spring-boot:run
+```
+
+เมื่อรันสำเร็จ API จะพร้อมใช้งานที่
+- http://localhost:8080
+
+### 9.3 โครงสร้างหลักของโค้ด
+- Model: `Coffee`
+- Service: `CoffeeService`
+- Controller: `CoffeeController`
+
+โปรเจกต์นี้เก็บข้อมูลในหน่วยความจำ (List) และมีข้อมูลตั้งต้น 2 เมนู
+- Espresso (45.0)
+- Latte (55.0)
+
+---
+
+## 10. ตัวอย่างเรียก API ด้วย curl
+
+### 10.1 ดูเมนูทั้งหมด
+```bash
+curl http://localhost:8080/coffees
+```
+
+### 10.2 ดูเมนูตามรหัส
+```bash
+curl http://localhost:8080/coffees/1
+```
+
+### 10.3 เพิ่มเมนูใหม่
+```bash
+curl -X POST http://localhost:8080/coffees \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Cappuccino","price":60.0}'
+```
+
+### 10.4 แก้ไขเมนูตามรหัส
+```bash
+curl -X PUT http://localhost:8080/coffees/2 \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Latte","price":50.0}'
+```
+
+### 10.5 ลบเมนูตามรหัส
+```bash
+curl -X DELETE http://localhost:8080/coffees/3
+```
+
+### 10.6 ตัวอย่างกรณีไม่พบข้อมูล
+```bash
+curl http://localhost:8080/coffees/999
+```
+
+ผลลัพธ์: 404 Not Found
+
+---
+
 *หมายเหตุสำหรับผู้สอน: ไฟล์นี้เป็นตัวโจทย์ + expected result ไม่มีเฉลยโค้ดแนบมา นักศึกษาต้อง implement เอง ปรับ entity (เช่นเปลี่ยนจากกาแฟเป็นหนังสือ/สินค้า), จำนวน endpoint และคะแนนได้ตามความเหมาะสม*
