@@ -21,6 +21,7 @@
   - ผ่าน
 - หลักฐาน:
   - แนบภาพหน้าจอผลลัพธ์ใน Postman หรือ Terminal
+<img width="793" height="282" alt="image" src="https://github.com/user-attachments/assets/21884bd4-afed-42f2-adaf-982729e62e2a" />
 
 ### 2.2 GET /coffees/{id}
 - วิธีทดสอบ:
@@ -32,6 +33,7 @@
   - ผ่าน
 - หลักฐาน:
   - แนบภาพหน้าจอผลลัพธ์
+<img width="657" height="245" alt="image" src="https://github.com/user-attachments/assets/55ff4b72-2617-425a-9d31-2676fa9434f2" />
 
 ### 2.3 POST /coffees
 - วิธีทดสอบ:
@@ -43,6 +45,9 @@
   - ผ่าน
 - หลักฐาน:
   - แนบภาพหน้าจอผลลัพธ์
+<img width="620" height="342" alt="image" src="https://github.com/user-attachments/assets/43529f89-9e70-4ab3-a464-f0e09b5721e4" />
+<img width="1023" height="258" alt="image" src="https://github.com/user-attachments/assets/1cc8615e-6046-4b0b-af0e-107446c0b2f8" />
+
 
 ### 2.4 PUT /coffees/{id}
 - วิธีทดสอบ:
@@ -54,6 +59,7 @@
   - ผ่าน
 - หลักฐาน:
   - แนบภาพหน้าจอผลลัพธ์
+<img width="1100" height="467" alt="image" src="https://github.com/user-attachments/assets/9cad41db-8be8-4152-8e67-c6aaa0a65fd4" />
 
 ### 2.5 DELETE /coffees/{id}
 - วิธีทดสอบ:
@@ -65,6 +71,8 @@
   - ผ่าน
 - หลักฐาน:
   - แนบภาพหน้าจอผลลัพธ์
+<img width="1093" height="417" alt="image" src="https://github.com/user-attachments/assets/83b16bd7-8454-491a-87b6-f8cfba255a73" />
+<img width="1106" height="227" alt="image" src="https://github.com/user-attachments/assets/582f52d6-985a-4982-9ea2-bc4d181be5ae" />
 
 ### 2.6 กรณีไม่พบข้อมูล (โบนัส)
 - วิธีทดสอบ:
@@ -75,6 +83,7 @@
   - ผ่าน
 - หมายเหตุ:
   - รองรับการคืนค่า 404 แล้ว
+<img width="1087" height="226" alt="image" src="https://github.com/user-attachments/assets/60c7d33f-7cb4-4387-8852-4fb9838000d2" />
 
 ## 3) Discussion
 
