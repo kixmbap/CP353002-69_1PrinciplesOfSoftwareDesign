@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CoffeeService {
@@ -18,5 +19,22 @@ public class CoffeeService {
 
     public List<Coffee> getAllCoffees() {
         return coffees;
+    }
+
+    public Optional<Coffee> getCoffeeById(Long id) {
+        return coffees.stream()
+                .filter(coffee -> coffee.getId().equals(id))
+                .findFirst();
+    }
+
+    public Coffee addCoffee(Coffee coffee) {
+        Long nextId = coffees.stream()
+                .map(Coffee::getId)
+                .max(Long::compareTo)
+                .orElse(0L) + 1;
+
+        Coffee newCoffee = new Coffee(nextId, coffee.getName(), coffee.getPrice());
+        coffees.add(newCoffee);
+        return newCoffee;
     }
 }
