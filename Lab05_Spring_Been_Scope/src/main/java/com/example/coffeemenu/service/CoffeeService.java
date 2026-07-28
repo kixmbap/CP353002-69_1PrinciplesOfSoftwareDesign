@@ -37,4 +37,19 @@ public class CoffeeService {
         coffees.add(newCoffee);
         return newCoffee;
     }
+
+    public Optional<Coffee> updateCoffee(Long id, Coffee coffee) {
+        for (Coffee currentCoffee : coffees) {
+            if (currentCoffee.getId().equals(id)) {
+                currentCoffee.setName(coffee.getName());
+                currentCoffee.setPrice(coffee.getPrice());
+                return Optional.of(currentCoffee);
+            }
+        }
+        return Optional.empty();
+    }
+
+    public boolean deleteCoffee(Long id) {
+        return coffees.removeIf(coffee -> coffee.getId().equals(id));
+    }
 }
