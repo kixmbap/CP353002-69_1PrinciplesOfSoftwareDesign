@@ -12,7 +12,7 @@ import org.thymeleaf.spring6.view.ThymeleafViewResolver;
  * By default, Spring Boot + Thymeleaf looks for templates in
  * classpath:/templates/. Here we override that by registering our
  * own ThymeleafViewResolver bean that points at a different folder
- * (classpath:/custom-templates/), to demonstrate that the mapping
+ * (classpath:/my-templates/), to demonstrate that the mapping
  * between a logical view name (e.g. "home") and the actual HTML
  * file is fully configurable.
  */
@@ -22,7 +22,7 @@ public class ThymeleafConfig {
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
-        resolver.setPrefix("classpath:/custom-templates/"); // custom folder, not /templates/
+        resolver.setPrefix("classpath:/my-templates/"); // custom folder, not /templates/
         resolver.setSuffix(".html");
         resolver.setTemplateMode("HTML");
         resolver.setCharacterEncoding("UTF-8");
