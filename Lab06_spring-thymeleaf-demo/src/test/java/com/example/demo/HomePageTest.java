@@ -21,6 +21,6 @@ class HomePageTest {
     void homePageShouldRenderCustomThymeleafTemplate() throws Exception {
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(org.hamcrest.Matchers.containsString("Hello from Thymeleaf with a custom ViewResolver!")));
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("นายปวัฒน์ ปัดทุมมา")));
     }
 }

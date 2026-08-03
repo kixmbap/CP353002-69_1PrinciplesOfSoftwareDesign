@@ -14,7 +14,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(Model model) {
-        model.addAttribute("message", "Hello from Thymeleaf with a custom ViewResolver!");
+        model.addAttribute("message", "นายปวัฒน์ ปัดทุมมา");
         return "home"; // resolved by ThymeleafConfig to classpath:/custom-templates/home.html
     }
 }
