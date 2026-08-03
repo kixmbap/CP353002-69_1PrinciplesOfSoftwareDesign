@@ -15,6 +15,7 @@ public class HomeController {
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("message", "นายปวัฒน์ ปัดทุมมา");
+        model.addAttribute("studentId", "673380048-6");
         return "home"; // resolved by ThymeleafConfig to classpath:/custom-templates/home.html
     }
 }
