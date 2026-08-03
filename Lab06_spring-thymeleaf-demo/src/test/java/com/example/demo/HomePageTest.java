@@ -23,4 +23,11 @@ class HomePageTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("นายปวัฒน์ ปัดทุมมา")));
     }
+
+    @Test
+    void aboutPageShouldRenderIntroMessage() throws Exception {
+        mockMvc.perform(get("/about"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("นักศึกษาสาขาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยขอนแก่น")));
+    }
 }

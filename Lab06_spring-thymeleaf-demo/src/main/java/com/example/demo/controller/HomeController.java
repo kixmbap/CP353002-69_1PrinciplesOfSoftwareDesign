@@ -16,6 +16,12 @@ public class HomeController {
     public String home(Model model) {
         model.addAttribute("message", "นายปวัฒน์ ปัดทุมมา");
         model.addAttribute("studentId", "673380048-6");
-        return "home"; // resolved by ThymeleafConfig to classpath:/custom-templates/home.html
+        return "home"; // resolved by ThymeleafConfig to classpath:/my-templates/home.html
+    }
+
+    @GetMapping("/about")
+    public String about(Model model) {
+        model.addAttribute("aboutMessage", "สวัสดีครับ ผมชื่อปวัฒน์ ปัดทุมมา นักศึกษาสาขาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยขอนแก่น");
+        return "about";
     }
 }
