@@ -21,6 +21,9 @@ public class Product {
     private Double price;
     private String discountType = "NONE";
 
+    @Transient
+    private Double discountedPrice;
+
     // Product owns the 1:1 relationship through detail_id.
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "detail_id", unique = true)
@@ -91,6 +94,14 @@ public class Product {
 
     public ProductDetail getDetail() {
         return detail;
+    }
+
+    public Double getDiscountedPrice() {
+        return discountedPrice != null ? discountedPrice : price;
+    }
+
+    public void setDiscountedPrice(Double discountedPrice) {
+        this.discountedPrice = discountedPrice;
     }
 
     public void setDetail(ProductDetail detail) {
