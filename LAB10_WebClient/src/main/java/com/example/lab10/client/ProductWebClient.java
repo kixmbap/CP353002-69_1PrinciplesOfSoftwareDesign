@@ -56,7 +56,10 @@ public class ProductWebClient {
      */
     public Flux<Product> getAllProducts() {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return client.get() // ← แก้บรรทัดนี้
+                .uri("/products")
+                .retrieve()
+                .bodyToFlux(Product.class);
     }
 
     /**
@@ -71,7 +74,11 @@ public class ProductWebClient {
      */
     public Mono<Product> createProduct(Product product) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return client.post() // ← แก้บรรทัดนี้
+                .uri("/products")
+                .bodyValue(product)
+                .retrieve()
+                .bodyToMono(Product.class);
     }
 
     /**
@@ -85,7 +92,10 @@ public class ProductWebClient {
      */
     public Mono<Void> deleteProduct(String id) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return client.delete() // ← แก้บรรทัดนี้
+                .uri("/products/{id}", id)
+                .retrieve()
+                .bodyToMono(Void.class);
     }
 
     /**
@@ -99,7 +109,10 @@ public class ProductWebClient {
      */
     public Flux<Product> getByCategory(String category) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return client.get() // ← แก้บรรทัดนี้
+                .uri("/products/category/{category}", category)
+                .retrieve()
+                .bodyToFlux(Product.class);
     }
 
     /**
@@ -115,6 +128,10 @@ public class ProductWebClient {
      */
     public Mono<Double> getDiscountedPrice(String id) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return client.get() // ← แก้บรรทัดนี้
+                .uri("/products/{id}/price", id)
+                .retrieve()
+                .bodyToMono(Double.class)
+                .doOnNext(price -> System.out.println("Price: " + price));
     }
 }
