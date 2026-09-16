@@ -47,7 +47,7 @@ public class ProductRepository {
      */
     public Mono<Product> findById(String id) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return Mono.defer(() -> Mono.justOrEmpty(store.get(id))); // ← แก้บรรทัดนี้
     }
 
     // ── 2. หา Product ทั้งหมด ────────────────────────────
@@ -59,7 +59,7 @@ public class ProductRepository {
      */
     public Flux<Product> findAll() {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return Flux.defer(() -> Flux.fromIterable(store.values())); // ← แก้บรรทัดนี้
     }
 
     // ── 3. บันทึก Product ────────────────────────────────
@@ -71,7 +71,10 @@ public class ProductRepository {
      */
     public Mono<Product> save(Product product) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return Mono.fromSupplier(() -> { // ← แก้บรรทัดนี้
+            store.put(product.getId(), product);
+            return product;
+        });
     }
 
     // ── 4. ลบ Product ────────────────────────────────────
@@ -83,7 +86,7 @@ public class ProductRepository {
      */
     public Mono<Void> deleteById(String id) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return Mono.fromRunnable(() -> store.remove(id)); // ← แก้บรรทัดนี้
     }
 
     // ── 5. กรองตาม category ──────────────────────────────
@@ -95,6 +98,8 @@ public class ProductRepository {
      */
     public Flux<Product> findByCategory(String category) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return findAll() // ← แก้บรรทัดนี้
+                .filter(product -> product.getCategory() != null
+                        && product.getCategory().equalsIgnoreCase(category));
     }
 }
